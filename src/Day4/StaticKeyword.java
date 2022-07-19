@@ -12,21 +12,19 @@ class Student {
 	}
 
 	public String display() {
-		return "Student [name= " + name + ",\t rollno= " + rollno + ", Class= " + Class + "]";
+		return "Student [name= " + name + ", rollno= " + rollno + ", Class= " + Class + "]";
 	}
 
 	public static int noOfStudents() {
 		return count-1;
 	}
-	
-	
-	
+		
 }
 public class StaticKeyword {
 
 	public static void main(String[] args) {
 		Student s1=new Student("Bharat");
-		Student s2=new Student("Gireesh");
+		Student s2=new Student("Girish");
 		Student s3=new Student("Sharda");
 		Student s4=new Student("Subhra");
 		System.out.println(s1.display());
