@@ -12,6 +12,10 @@ class Five_G extends Four_G {
 	}
 }
 public class MethodOverriding {
+	
+	public static void Package() {
+		System.out.println("This is the method of MethodOverriding class, which is present inside Day5 package");
+	}
 
 	public static void main(String[] args) {
 		Five_G f=new Five_G();
