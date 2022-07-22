@@ -74,5 +74,6 @@ public class Operators {
 		int e=sc.nextInt();
 		int f=sc.nextInt();
 		op.ternary(e,f);
+		sc.close();
 	}
 }
