@@ -38,18 +38,18 @@ class Customer {
 }
 
 class Visit {
-	private Customer name;
+	private Customer c;
 	private Date date;
 	private double serviceExpense;
 	private double productExpense;
 
-	public Visit(Customer name, Date date) {
-		this.name = name;
+	public Visit(Customer c, Date date) {
+		this.c = c;
 		this.date = date;
 	}
 
 	public String getCustomerName() {
-		return name.getName();
+		return c.getName();
 	}
 
 	public double getServiceExpense() {
@@ -69,16 +69,16 @@ class Visit {
 	}
 
 	public double getTotalExpense() {
-		return (serviceExpense - (serviceExpense * DiscountRate.getServiceDiscountRate(name.getMemberType())))
-				+ (productExpense - (productExpense * DiscountRate.getProductDiscountRate(name.getMemberType())));
+		return (serviceExpense - (serviceExpense * DiscountRate.getServiceDiscountRate(c.getMemberType())))
+				+ (productExpense - (productExpense * DiscountRate.getProductDiscountRate(c.getMemberType())));
 
 	}
 
 	@Override
 	public String toString() {
-		return "Visit{" + "customer name=" + name.getName() + ", customer member=" + name.isMember()
-				+ ", customer member type=" + name.getMemberType() + ", date=" + date + ", serviceExpense=$"
-				+ serviceExpense + ", productExpense=$" + productExpense + '}';
+		return "{ " + "customer name=" + c.getName() + ", customer member=" + c.isMember()
+				+ ", customer member type=" + c.getMemberType() + ", date=" + date + ", serviceExpense=$"
+				+ serviceExpense + ", productExpense=$" + productExpense + " ]";
 	}
 }
 
@@ -100,20 +100,18 @@ class DiscountRate {
 		case "Silver":
 			return serviceDiscountSilver;
 		default:
-			throw new IllegalArgumentException("wrong service type specified");
+			return 0.00;
 		}
 	}
 
 	public static double getProductDiscountRate(String type) {
 		switch (type) {
 		case "Premium":
-			return productDiscountPremium;
 		case "Gold":
-			return productDiscountGold;
 		case "Silver":
 			return productDiscountSilver;
 		default:
-			throw new IllegalArgumentException("wrong service type specified");
+			return 0.00;
 		}
 	}  
 
