@@ -99,33 +99,3 @@ class Staff extends Person {
 		return "Staff [ name=" + name + ", address=" + address + ", school=" + school + ", pay=" + pay + " ]";
 	}	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//public class Q2 {
-//	public static void main(String[] args) {
-//		Person p=new Staff("Bharat", "Odisha", "dth",543638);
-//		System.out.println(p);
-//	}
-//}

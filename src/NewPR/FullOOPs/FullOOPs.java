@@ -1,4 +1,4 @@
-package FullOOPs;
+package NewPR.FullOOPs;
 
 import java.util.Scanner;
 

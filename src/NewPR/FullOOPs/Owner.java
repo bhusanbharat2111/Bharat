@@ -1,4 +1,4 @@
-package FullOOPs;
+package NewPR.FullOOPs;
 
 public class Owner {
 	//encapsulation

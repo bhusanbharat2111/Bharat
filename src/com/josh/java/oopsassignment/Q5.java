@@ -76,7 +76,7 @@ class Visit {
 
 	@Override
 	public String toString() {
-		return "{ " + "customer name=" + c.getName() + ", customer member=" + c.isMember()
+		return "[ " + "customer name=" + c.getName() + ", customer member=" + c.isMember()
 				+ ", customer member type=" + c.getMemberType() + ", date=" + date + ", serviceExpense=$"
 				+ serviceExpense + ", productExpense=$" + productExpense + " ]";
 	}
@@ -117,17 +117,3 @@ class DiscountRate {
 
 }
 
-//public class Q5 {
-//	public static void main(String[] args) {
-//		Customer c1 = new Customer("Bharat");
-//		c1.member=true;
-//		c1.memberType="Premium";
-//		Visit v1 = new Visit(c1, new Date());
-//		v1.setProductExpense(4.5);
-//		v1.setServiceExpense(8.5);
-//		v1.setProductExpense(1.5);
-//		System.out.println(v1.toString());
-//		System.out.println("Total expense made by " + v1.getCustomerName() + " = " + v1.getTotalExpense());
-//
-//	}
-//}
