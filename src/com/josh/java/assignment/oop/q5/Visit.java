@@ -46,8 +46,8 @@ public class Visit {
 
 	@Override
 	public String toString() {
-		return "\n[\n" + " customer name=" + c.getName() + ",\n customer member=" + c.isMember() + ",\n customer member type="
-				+ c.getMemberType() + ",\n date=" + date + ",\n serviceExpense=$" + serviceExpense + ",\n productExpense=$"
-				+ productExpense + " \n]";
+		return "\n[\n" + " customer name=" + c.getName() + ",\n customer member=" + c.isMember()
+				+ ",\n customer member type=" + c.getMemberType() + ",\n date=" + date + ",\n serviceExpense=$"
+				+ serviceExpense + ",\n productExpense=$" + productExpense + " \n]";
 	}
 }
