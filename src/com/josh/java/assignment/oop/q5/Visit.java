@@ -1,6 +1,9 @@
 package com.josh.java.assignment.oop.q5;
 
 import java.util.Date;
+import lombok.Data;
+
+@Data
 
 //Visit class calculates the total expense of the customer by checking membership type of that customer and returns the bill
 public class Visit {
@@ -14,24 +17,12 @@ public class Visit {
 		this.date = date;
 	}
 
-	/*
-	 * created Getter and Setter methods to access the private properties of this
-	 * class from outside this class
-	 */
 	public String getCustomerName() {
 		return c.getName();
 	}
 
-	public double getServiceExpense() {
-		return serviceExpense;
-	}
-
 	public void setServiceExpense(double serviceExpense) {
 		this.serviceExpense = this.serviceExpense + serviceExpense;
-	}
-
-	public double getProductExpense() {
-		return productExpense;
 	}
 
 	public void setProductExpense(double productExpense) {
