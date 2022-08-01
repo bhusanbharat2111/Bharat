@@ -1,5 +1,10 @@
 package com.josh.java.assignment.oop.q2;
 
+//import lombok.Data;
+
+//imported data class to implement getter and setter method  
+//@Data
+
 //this class have name and address properties as it is a sub class of person
 public class Student extends Person {
 	private String program;
@@ -14,34 +19,6 @@ public class Student extends Person {
 		super(name, address);
 		this.program = program;
 		this.year = year;
-	}
-
-	/*
-	 * created Getter and Setter methods to access the private properties of this
-	 * class from outside this class
-	 */
-	public String getProgram() {
-		return program;
-	}
-
-	public void setProgram(String program) {
-		this.program = program;
-	}
-
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
-	}
-
-	public double getFee() {
-		return fee;
-	}
-
-	public void setFee(double fee) {
-		this.fee = fee;
 	}
 
 	@Override
