@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Division {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-		System.out.println("Enter two values fron division");
+		System.out.println("Enter two values for division");
 		try {
 			System.out.println("Enter 1st number:");
 			int a = kb.nextInt();
@@ -21,16 +21,17 @@ public class Division {
 			if (b < 0) {
 				throw new CustomException("ERROR!\nPlease, don't use negetive values!");
 			}
-			if (a < b) {
-				throw new CustomException("ERROR!\n1st number can't be smaller than 2nd number!");
-			}
 			System.out.println("Division of a/b is:" + ((double) a / b));
-
-		} catch (CustomException nvx) {
+		}
+		// custom Exception declared in another file
+		catch (CustomException nvx) {
 			System.out.println(nvx.getMessage());
-		} catch (InputMismatchException ime) {
+		}
+		// InputMismatchException is a predefined unchecked runtimeException
+		catch (InputMismatchException ime) {
 			System.out.println("ERROR!\nUse only digits");
 		} finally {
+			// closing the scanner class object reference
 			kb.close();
 			System.out.println("Thank You!\nBYE..");
 		}

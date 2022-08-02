@@ -1,10 +1,14 @@
 package training.exceptionhandling;
 
-public class CustomException extends Exception{
-	
+//declaring a customException class that extends exception class
+public class CustomException extends Exception {
+
+	// non- parameterized constructor
 	public CustomException() {
-		super();	
+		super();
 	}
+
+	// parameterized constructor
 	public CustomException(String errorMessage) {
 		super(errorMessage);
 	}

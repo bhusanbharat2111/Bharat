@@ -7,9 +7,11 @@ public class Pallindrome {
 		int index1 = string.length() - 1;
 
 		while (index < index1) {
+			//checking the opposite indexes are same or not
 			if (string.charAt(index) != string.charAt(index1)) {
 				return false;
 			}
+			//updating index values
 			index++;
 			index1--;
 		}

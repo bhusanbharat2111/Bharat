@@ -17,6 +17,7 @@ public class OccurrenceOfCharacter {
 					break;
 				}
 			}
+			// storing as a string to print
 			string2 += count + "" + char1 + " ";
 		}
 		return string2;
