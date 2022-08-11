@@ -14,77 +14,81 @@ import java.util.zip.GZIPOutputStream;
 
 public class GzipFile {
 	public static void main(String[] args) throws IOException {
+		BufferedReader bufferr1 = null;
+		try {
+			File f1 = new File("TextFile2.txt");
+			File f2 = new File("copy1.txt");
+			File f3 = new File("copy2.txt");
 
-		File f1 = new File("D:\\NewProject1\\src\\training\\filehandling\\TextFile2.txt");
-		File f2 = new File("D:\\NewProject1\\src\\training\\filehandling\\copy1.txt");
-		File f3 = new File("D:\\NewProject1\\src\\training\\filehandling\\copy2.txt");
-		/**
-		 * Using .copy() to copy one file to another via a specified path.
-		 */
-		Files.copy(f1.toPath(), f2.toPath());
+			/**
+			 * Using .copy() to copy one file to another via a specified path.
+			 */
+			Files.copy(f1.toPath(), f2.toPath());
 
-		BufferedReader bufferr1 = new BufferedReader(
-				new FileReader("D:\\NewProject1\\src\\training\\filehandling\\copy1.txt"));
+			bufferr1 = new BufferedReader(new FileReader("copy1.txt"));
 
-		String Details = null;
-		while ((Details = bufferr1.readLine()) != null) {
-			System.out.println(Details);
-		}
-		bufferr1.close();
+			String Details = null;
+			while ((Details = bufferr1.readLine()) != null) {
+				System.out.println(Details);
+			}
+			/**
+			 * Converts given file path to object.
+			 */
+			Path source = Paths.get("copy1.txt");
+			Path target = Paths.get("copy1.txt.gz");
 
-		/**
-		 * Converts given file path to object.
-		 */
-		Path source = Paths.get("D:\\NewProject1\\src\\training\\filehandling\\copy1.txt");
-		Path target = Paths.get("D:\\NewProject1\\src\\training\\filehandling\\copy1.txt.gz");
+			/**
+			 * Using .notExists() to check the existence of the given file.
+			 */
+			if (Files.notExists(source)) {
+				System.out.println("Invalid Path provided!!!");
+				return;
+			}
+			/**
+			 * Using Custom method(compressGzip(source, target);) to pass the path of the
+			 * files.
+			 */
+			GzipFile.compressGzip(source, target);
 
-		/**
-		 * Using .notExists() to check the existence of the given file.
-		 */
-		if (Files.notExists(source)) {
-			System.out.println("Invalid Path provided!!!");
-			return;
-		}
-		/**
-		 * Using Custom method(compressGzip(source, target);) to pass the path of the
-		 * files.
-		 */
-		GzipFile.compressGzip(source, target);
+			/**
+			 * Using .delete() to delete the given file.
+			 */
+			if (f1.delete()) {
+				System.out.println(f1.getName() + "    File deleted Successfully!!");
 
-		/**
-		 * Using .delete() to delete the given file.
-		 */
-		if (f1.delete()) {
-			System.out.println(f1.getName() + "    File deleted Successfully!!");
+			} else {
+				System.out.println("Failed to delete the file!!");
+			}
 
-		} else {
-			System.out.println("Failed to delete the file!!");
-		}
+			/**
+			 * Using SimpleDateFormat class to use .format() to get the value returned by
+			 * .lastModified() in the specified format.
+			 */
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			System.out.println("Last Modified Date: " + sdf.format(f2.lastModified()));
 
-		/**
-		 * Using SimpleDateFormat class to use .format() to get the value returned by
-		 * .lastModified() in the specified format.
-		 */
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		System.out.println("Last Modified Date: " + sdf.format(f2.lastModified()));
+			/**
+			 * Using .setReadOnly() to restrict the Write operations for the specified file.
+			 */
+			boolean access = f2.setReadOnly();
+			if (access == true) {
+				System.out.println("Converted file to ReadOnly Successfully!!!");
+			} else {
+				System.out.println("Failed to convert!!!!");
+			}
 
-		/**
-		 * Using .setReadOnly() to restrict the Write operations for the specified file.
-		 */
-		boolean access = f2.setReadOnly();
-		if (access == true) {
-			System.out.println("Converted file to ReadOnly Successfully!!!");
-		} else {
-			System.out.println("Failed to convert!!!!");
-		}
-
-		/**
-		 * Using the .isHidden() to check if the file is Hidden or not.
-		 */
-		if (f3.isHidden()) {
-			System.out.println("The specified file is hidden");
-		} else {
-			System.out.println("The specified file is not hidden");
+			/**
+			 * Using the .isHidden() to check if the file is Hidden or not.
+			 */
+			if (f3.isHidden()) {
+				System.out.println("The specified file is hidden");
+			} else {
+				System.out.println("The specified file is not hidden");
+			}
+		} catch (Exception e) {
+			System.out.println("Invalid Input!!");
+		} finally {
+			bufferr1.close();
 		}
 	}
 
