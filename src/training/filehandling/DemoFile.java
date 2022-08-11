@@ -11,14 +11,14 @@ public class DemoFile {
 		BufferedWriter buffer = null;
 		BufferedReader bufferr = null;
 		try {
-			buffer = new BufferedWriter(new FileWriter("TextFile2.txt"));
+			buffer = new BufferedWriter(new FileWriter("files(filehandling)\\TextFile2.txt"));
 			/**
 			 * Using Write method to insert data into the file.
 			 */
 			buffer.write("hello");
 			buffer.write("\nFile has been created successfully");
 
-			bufferr = new BufferedReader(new FileReader("TextFile2.txt"));
+			bufferr = new BufferedReader(new FileReader("files(filehandling)\\TextFile2.txt"));
 			/**
 			 * Using readLine() method to get the data present in the file.
 			 */
