@@ -9,7 +9,7 @@ public class FileHandling {
 
 	public static void main(String[] args) {
 		// created a object of File class and given the path
-		File f = new File("Bharat.txt");
+		File f = new File("files(filehandling)\\Bharat.txt");
 		FileWriter fw = null;
 		Scanner sc = null;
 
@@ -22,7 +22,7 @@ public class FileHandling {
 			}
 
 			// writing in the file
-			fw = new FileWriter("Bharat.txt");
+			fw = new FileWriter("files(filehandling)\\Bharat.txt");
 			fw.write("Anything - used to refer to a thing, no matter what.\"nobody was saying anything\""
 					+ "used for emphasis." + "\"I was ready for anything\"used to indicate a range."
 					+ "he trains anything from seven to eight hours a day");
@@ -42,3 +42,6 @@ public class FileHandling {
 //		} else {
 //			System.out.println("Some problem occurred while deleting the file");
 //		}
+	}
+
+}
