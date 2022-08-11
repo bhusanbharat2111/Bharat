@@ -16,16 +16,16 @@ public class GzipFile {
 	public static void main(String[] args) throws IOException {
 		BufferedReader bufferr1 = null;
 		try {
-			File f1 = new File("TextFile2.txt");
-			File f2 = new File("copy1.txt");
-			File f3 = new File("copy2.txt");
+			File f1 = new File("files(filehandling)\\TextFile2.txt");
+			File f2 = new File("files(filehandling)\\copy1.txt");
+			File f3 = new File("files(filehandling)\\copy2.txt");
 
 			/**
 			 * Using .copy() to copy one file to another via a specified path.
 			 */
 			Files.copy(f1.toPath(), f2.toPath());
 
-			bufferr1 = new BufferedReader(new FileReader("copy1.txt"));
+			bufferr1 = new BufferedReader(new FileReader("files(filehandling)\\copy1.txt"));
 
 			String Details = null;
 			while ((Details = bufferr1.readLine()) != null) {
@@ -34,8 +34,8 @@ public class GzipFile {
 			/**
 			 * Converts given file path to object.
 			 */
-			Path source = Paths.get("copy1.txt");
-			Path target = Paths.get("copy1.txt.gz");
+			Path source = Paths.get("files(filehandling)\\copy1.txt");
+			Path target = Paths.get("files(filehandling)\\copy1.txt.gz");
 
 			/**
 			 * Using .notExists() to check the existence of the given file.
