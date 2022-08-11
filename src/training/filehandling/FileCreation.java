@@ -6,13 +6,13 @@ import java.io.IOException;
 
 public class FileCreation {
 	public static void main(String[] args) throws IOException {
-		File file = new File("TextFile1.txt");
+		File file = new File("files(filehandling)\\TextFile1.txt");
 		file.createNewFile();
 		System.out.println(file.canExecute());
 		System.out.println(file.canRead());
 		System.out.println(file.getName());
 
-		try (FileReader fr = new FileReader("TextFile1.txt")) {
+		try (FileReader fr = new FileReader("files(filehandling)\\TextFile1.txt")) {
 			System.out.println(fr.read());
 		}
 	}
